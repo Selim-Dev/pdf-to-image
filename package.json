@@ -4,14 +4,30 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "convert:old": "node pdf-converter.mjs",
+    "convert:low": "node pdf-converter.mjs --format jpeg --quality 40 --scale 1.2",
+    "convert": "node pdf-converter.mjs --format jpeg --quality 60 --scale 1.5",
+    "convert:high": "node pdf-converter.mjs --format jpeg --quality 80 --scale 1.8",
+    "convert:webp": "node pdf-converter.mjs --format webp --quality 60 --scale 1.5"
   },
-  "keywords": [],
+  "keywords": [
+    "pdf",
+    "images",
+    "conversion",
+    "optimization"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.8.4",
     "canvas": "^2.11.2",
-    "pdfjs-dist": "^2.16.105"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
+    "pdfjs-dist": "^2.16.105",
+    "sharp": "^0.32.6"
   },
-  "description": ""
+  "description": "PDF to optimized image converter"
 }
